@@ -1409,6 +1409,7 @@ GameObject:
   - component: {fileID: 508333075751348000}
   - component: {fileID: 5308761964016886304}
   - component: {fileID: 9079330280444952206}
+  - component: {fileID: 353887277605688266}
   m_Layer: 0
   m_Name: BananaPill
   m_TagString: Untagged
@@ -1562,6 +1563,24 @@ MonoBehaviour:
   onWindup:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &353887277605688266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7898814137119418114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1ee449bafc908448189b9e3e8ae980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRadius: 1.14
+  interactionOffset: {x: 0.94, y: 0.03}
+  interactionSign: {fileID: 8141233304078914119, guid: 0f24ce224e2b1ee41bc4b4fa98f64c4e, type: 3}
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &8438590467429695189
 GameObject:
   m_ObjectHideFlags: 0
