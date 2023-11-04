@@ -235,7 +235,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 20.43
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -297,7 +297,7 @@ MonoBehaviour:
   onAirCheckPoint: {fileID: 1137973369}
   onAirCheckRadius: 0.01
   movementSpeed: 5
-  jumpStrength: 10
+  jumpStrength: 16.4
   onLanding:
     m_PersistentCalls:
       m_Calls: []
@@ -308,6 +308,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   jumpInvalidatorDelay: 0
+  gravityLow: 5.29
+  gravityHigh: 10.8
 --- !u!114 &695932681
 MonoBehaviour:
   m_ObjectHideFlags: 0
