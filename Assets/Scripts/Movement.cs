@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
     public float jumpInvalidatorDelay;
     public float gravityLow;
     public float gravityHigh;
+    public PhysicsMaterial2D movementMaterial;
+    public PhysicsMaterial2D standingMaterial;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +48,14 @@ public class Movement : MonoBehaviour
     private void MovementUpdate()
     {
         Vector2 moveInput = Vector2.ClampMagnitude(moveController.getMoveInput(), 1.0f);
+        if (moveInput.magnitude > 0)
+        {
+            rb.sharedMaterial = movementMaterial;
+        }
+        else
+        {
+            rb.sharedMaterial = standingMaterial;
+        }
         rb.velocity = moveInput * movementSpeed + Vector2.up * rb.velocity.y;
 
         if (moveInput.x > 0 && transform.localScale.x < 0)
