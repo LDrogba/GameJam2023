@@ -70,6 +70,10 @@ public class Movement : MonoBehaviour
 
     private void JumpUpdate()
     {
+        if (isGrounded)
+        {
+            rb.gravityScale = 0;
+        }
         bool isGroundedNow = Physics2D.OverlapCircle(onAirCheckPoint.position, onAirCheckRadius, canLandLayers);
         Debug.Log($"isGroundedNow={isGroundedNow};isGrounded={isGrounded}");
         if (!isGrounded && isGroundedNow)
@@ -101,7 +105,7 @@ public class Movement : MonoBehaviour
         {
             rb.gravityScale = gravityLow;
         }
-        else
+        else if (!isGrounded)
         {
             rb.gravityScale = gravityHigh;
         }
