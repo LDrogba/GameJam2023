@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class EnemyControler : MonoBehaviour, IMoveController, IAttackController
@@ -17,20 +18,28 @@ public class EnemyControler : MonoBehaviour, IMoveController, IAttackController
 
     public float attackDist;
     public float jumpDist;
+    public float guardingHeight = 0.5f;
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x >= endPoint.transform.position.x)
+        if ((player.transform.position.x < startPoint.transform.position.x ||
+            player.transform.position.x > endPoint.transform.position.x) && 
+            math.abs(player.transform.position.y - transform.position.y) > guardingHeight) //player is not in guarding zone
         {
-            goingRight = false;
+            if (transform.position.x <= startPoint.transform.position.x)
+                goingRight = true;
+            if (transform.position.x >= endPoint.transform.position.x)
+                goingRight = false;
         }
-        if ((transform.position.x <= startPoint.transform.position.x))
-        {
-            goingRight = true;
+        else {
+            if (transform.position.x < player.transform.position.x )
+                goingRight = true;
+            if (transform.position.x > player.transform.position.x)
+                goingRight = false;
         }
 
-        if(goingRight)
+        if (goingRight)
         {
             moveInput.x = 1;
         }
@@ -38,7 +47,6 @@ public class EnemyControler : MonoBehaviour, IMoveController, IAttackController
         {
             moveInput.x = -1;
         }
-
         jumpInput = jumpInRange();
 
         if (Vector3.Distance(player.transform.position, transform.position) <= attackDist)
