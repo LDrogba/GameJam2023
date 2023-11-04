@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Attack : MonoBehaviour
 {
     private IAttackController controller;
+    private Animator animator;
     public Vector2 hitScanPosition;
     public Vector2 hitScanSize;
     public LayerMask layersToHit;
@@ -17,7 +18,8 @@ public class Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        controller = GetComponent<IAttackController>(); 
+        controller = GetComponent<IAttackController>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void FixedUpdate()
@@ -37,6 +39,7 @@ public class Attack : MonoBehaviour
         onWindup.Invoke();
         yield return new WaitForSeconds(windup);
         onAttack.Invoke();
+        animator.SetTrigger("Attack");
         Vector2 turnedhitScanPostion = hitScanPosition * transform.localScale;
         Collider2D[] temps = Physics2D.OverlapBoxAll(turnedhitScanPostion + (Vector2)transform.position, hitScanSize, 0, layersToHit);
         attacking = false;
