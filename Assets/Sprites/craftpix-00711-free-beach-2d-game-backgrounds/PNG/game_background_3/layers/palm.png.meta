@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 46daccfd86f3d4e4d8ff8d7182100ca8
+guid: bb829b8daa7124e46b3983e1a820a167
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hooker_3
+      name: palm_0
       rect:
         serializedVersion: 2
-        x: 938
-        y: 428
-        width: 173
-        height: 224
+        x: 921
+        y: 121
+        width: 444
+        height: 504
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2a2216ce6dcfe540988eacaaeeb80d5
-      internalID: -18718154
+      spriteID: 3689b0cceb08b5347a17eec7dd91ab50
+      internalID: -390891257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palm_1
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 455
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc0ae9c5013762a4d8559121bb3cc1a9
+      internalID: 142831155
       vertices: []
       indices: 
       edges: []
@@ -141,10 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hooker_0: 177961756
-      hooker_1: -1145680521
-      hooker_2: 1741942517
-      hooker_3: -18718154
+      palm_0: -390891257
+      palm_1: 142831155
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

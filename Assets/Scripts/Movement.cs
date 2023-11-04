@@ -47,11 +47,19 @@ public class Movement : MonoBehaviour
     {
         Vector2 moveInput = Vector2.ClampMagnitude(moveController.getMoveInput(), 1.0f);
         rb.velocity = moveInput * movementSpeed + Vector2.up * rb.velocity.y;
+
+        if (moveInput.x > 0 && transform.localScale.x < 0)
+        {
+            Flip();
+        }
+        if (moveInput.x < 0 && transform.localScale.x > 0)
+        {
+            Flip();
+        }
     }
 
     private void JumpUpdate()
     {
-        Debug.Log(Physics2D.OverlapCircle(onAirCheckPoint.position, onAirCheckRadius, canLandLayers));
         bool isGroundedNow = Physics2D.OverlapCircle(onAirCheckPoint.position, onAirCheckRadius, canLandLayers);
         Debug.Log($"isGroundedNow={isGroundedNow};isGrounded={isGrounded}");
         if (!isGrounded && isGroundedNow)
@@ -92,5 +100,12 @@ public class Movement : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
         canJump = false;
+    }
+
+    private void Flip()
+    {
+        Vector3 currentScale = transform.localScale;
+        currentScale.x *= -1;
+        transform.localScale = currentScale;
     }
 }

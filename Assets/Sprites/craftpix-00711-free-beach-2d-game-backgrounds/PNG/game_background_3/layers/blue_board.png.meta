@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 46daccfd86f3d4e4d8ff8d7182100ca8
+guid: 29103788c9cdac545a6505279def0c02
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hooker_3
+      name: blue_board_0
       rect:
         serializedVersion: 2
-        x: 938
-        y: 428
-        width: 173
-        height: 224
+        x: 729
+        y: 170
+        width: 162
+        height: 214
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2a2216ce6dcfe540988eacaaeeb80d5
-      internalID: -18718154
+      spriteID: 599e492cf60a82d43b581cc2a5f1331c
+      internalID: 700216075
       vertices: []
       indices: 
       edges: []
@@ -141,10 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hooker_0: 177961756
-      hooker_1: -1145680521
-      hooker_2: 1741942517
-      hooker_3: -18718154
+      blue_board_0: 700216075
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
