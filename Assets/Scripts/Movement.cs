@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     private bool isGrounded;
     private bool canJump;
     private Rigidbody2D rb;
+    private Animator animator;
     public Transform onAirCheckPoint;
     public float onAirCheckRadius;
     public float movementSpeed;
@@ -25,6 +26,7 @@ public class Movement : MonoBehaviour
     {
         moveController = GetComponent<IMoveController>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,8 @@ public class Movement : MonoBehaviour
     {
         MovementUpdate();
         JumpUpdate();
+        animator.SetFloat("VerticalSpeed", rb.velocity.y);
+        animator.SetFloat("HorizontalSpeed", Mathf.Abs(rb.velocity.x));
     }
 
     private void MovementUpdate()
@@ -55,6 +59,7 @@ public class Movement : MonoBehaviour
             isGrounded = isGroundedNow;
             canJump = true;
             onLanding.Invoke();
+            animator.SetBool("IsGrounded", true);
             Debug.Log("landing");
         }
         if (isGrounded && !isGroundedNow)
@@ -68,9 +73,9 @@ public class Movement : MonoBehaviour
         if (canJump && jumpInput)
         {
             rb.velocity = Vector2.up * jumpStrength + Vector2.right * rb.velocity.x;
-            //rb.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
             canJump = false;
             onJump.Invoke();
+            animator.SetBool("IsGrounded", false);
             Debug.Log("jump");
         }
 
