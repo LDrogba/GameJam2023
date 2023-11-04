@@ -423,6 +423,8 @@ GameObject:
   - component: {fileID: 5233687094593456665}
   - component: {fileID: 731790534351397507}
   - component: {fileID: 1631085728002084896}
+  - component: {fileID: 8466379619477220759}
+  - component: {fileID: 8001673008982427093}
   m_Layer: 8
   m_Name: BananaZombie
   m_TagString: Player
@@ -574,6 +576,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
+--- !u!114 &8466379619477220759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874120831578437184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f71f7a576e566447baaee563d7636ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8001673008982427093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874120831578437184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef01bca8042eec49815f0bcc65c0b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  onKilled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8466379619477220759}
+        m_TargetAssemblyTypeName: Utility, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4926047238255654098, guid: 4473efc7880ca924481ce35e35897f52, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8466379619477220759}
+        m_TargetAssemblyTypeName: Utility, Assembly-CSharp
+        m_MethodName: DelayedDestroy
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  hitPoints: 0
 --- !u!1 &1944970023246856926
 GameObject:
   m_ObjectHideFlags: 0
