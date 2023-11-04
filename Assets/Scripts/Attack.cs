@@ -11,9 +11,11 @@ public class Attack : MonoBehaviour
     public Vector2 hitScanSize;
     public LayerMask layersToHit;
     public float windup;
+    public float cooldown;
     public bool attacking;
     public UnityEvent onAttack;
     public UnityEvent onWindup;
+    public UnityEvent onCooldownEnd;
     
     // Start is called before the first frame update
     void Start()
@@ -42,7 +44,6 @@ public class Attack : MonoBehaviour
         animator.SetTrigger("Attack");
         Vector2 turnedhitScanPostion = hitScanPosition * transform.localScale;
         Collider2D[] temps = Physics2D.OverlapBoxAll(turnedhitScanPostion + (Vector2)transform.position, hitScanSize, 0, layersToHit);
-        attacking = false;
         foreach (Collider2D temp in temps)
         {
             Damagable o;
@@ -51,6 +52,9 @@ public class Attack : MonoBehaviour
                 o.Damage();
             }
         }
+        yield return new WaitForSeconds(cooldown);
+        attacking = false;
+        onCooldownEnd.Invoke();
     }
 
     private void OnDrawGizmosSelected()
