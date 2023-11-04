@@ -38,9 +38,16 @@ public class Attack : MonoBehaviour
         yield return new WaitForSeconds(windup);
         onAttack.Invoke();
         Vector2 turnedhitScanPostion = hitScanPosition * transform.localScale;
-        Collider2D[] temp = Physics2D.OverlapBoxAll(turnedhitScanPostion + (Vector2)transform.position, hitScanSize, 0);
+        Collider2D[] temps = Physics2D.OverlapBoxAll(turnedhitScanPostion + (Vector2)transform.position, hitScanSize, 0, layersToHit);
         attacking = false;
-        Debug.Log("attacked");
+        foreach (Collider2D temp in temps)
+        {
+            Damagable o;
+            if (temp.TryGetComponent<Damagable>(out o))
+            {
+                o.Damage();
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()
