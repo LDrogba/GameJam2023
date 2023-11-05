@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -10,33 +11,53 @@ public class EnemyControler : MonoBehaviour, IMoveController, IAttackController
     private bool goingRight;
     private bool jumpInput;
     private bool attackInput;
+    private GameObject player;
+    private GameObject playerZombie;
+    
 
     public GameObject startPoint;
     public GameObject endPoint;
-    public GameObject player;
     public GameObject[] jumpPoints;
 
     public float attackDist;
     public float jumpDist;
     public float guardingHeight = 0.5f;
 
+    void Start()
+    {
+        player = GameObject.Find("BananaPill");
+        playerZombie = GameObject.Find("BananaZombie");
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if ((player.transform.position.x < startPoint.transform.position.x ||
-            player.transform.position.x > endPoint.transform.position.x) || 
-            math.abs(player.transform.position.y - transform.position.y) > guardingHeight) //player is not in guarding zone
+        if (player == null || playerZombie == null) { return; }
+
+        GameObject[] attackable = { player, playerZombie };
+        foreach (var player in attackable)
         {
-            if (transform.position.x <= startPoint.transform.position.x)
-                goingRight = true;
-            if (transform.position.x >= endPoint.transform.position.x)
-                goingRight = false;
-        }
-        else {
-            if (transform.position.x < player.transform.position.x )
-                goingRight = true;
-            if (transform.position.x > player.transform.position.x)
-                goingRight = false;
+            if ((player.transform.position.x < startPoint.transform.position.x ||
+                player.transform.position.x > endPoint.transform.position.x) ||
+                math.abs(player.transform.position.y - transform.position.y) > guardingHeight) //player is not in guarding zone
+            {
+                if (transform.position.x <= startPoint.transform.position.x)
+                    goingRight = true;
+                if (transform.position.x >= endPoint.transform.position.x)
+                    goingRight = false;
+            }
+            else
+            {
+                if (transform.position.x < player.transform.position.x)
+                    goingRight = true;
+                if (transform.position.x > player.transform.position.x)
+                    goingRight = false;
+            }
+            if (Vector3.Distance(player.transform.position, transform.position) <= attackDist)
+            {
+                Debug.Log(transform.name + "se atakuje");
+                attackInput = true;
+            }
         }
 
         if (goingRight)
@@ -49,11 +70,6 @@ public class EnemyControler : MonoBehaviour, IMoveController, IAttackController
         }
         jumpInput = jumpInRange();
 
-        if (Vector3.Distance(player.transform.position, transform.position) <= attackDist)
-        {
-            Debug.Log(transform.name + "se atakuje");
-            attackInput = true;
-        }
     }
     public bool getJumpInput()
     {
