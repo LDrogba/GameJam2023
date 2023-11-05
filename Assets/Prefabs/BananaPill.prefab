@@ -1413,7 +1413,7 @@ GameObject:
   - component: {fileID: 972750389082160199}
   m_Layer: 8
   m_Name: BananaPill
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

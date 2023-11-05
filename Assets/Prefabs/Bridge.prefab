@@ -264,7 +264,7 @@ MonoBehaviour:
   rootBoneDest: {fileID: 7582944059446747258}
   leftForarmDest: {fileID: 4125651204752174669}
   rightForarmDest: {fileID: 3391062566413951706}
-  collider: {fileID: 0}
+  collider: {fileID: 6213307898554824699}
   onActivate:
     m_PersistentCalls:
       m_Calls: []

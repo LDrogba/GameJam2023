@@ -75,30 +75,26 @@ public class Movement : MonoBehaviour
             rb.gravityScale = 0;
         }
         bool isGroundedNow = Physics2D.OverlapCircle(onAirCheckPoint.position, onAirCheckRadius, canLandLayers);
-        Debug.Log($"isGroundedNow={isGroundedNow};isGrounded={isGrounded}");
         if (!isGrounded && isGroundedNow)
         {
             isGrounded = isGroundedNow;
             canJump = true;
             onLanding.Invoke();
             animator.SetBool("IsGrounded", true);
-            Debug.Log("landing");
         }
         if (isGrounded && !isGroundedNow)
         {
-            Debug.Log("going on air");
             isGrounded = isGroundedNow;
             StartCoroutine(WaitSetCanJumpFalse(jumpInvalidatorDelay));
+            canJump = false;
         }
 
         bool jumpInput = moveController.getJumpInput();
         if (canJump && jumpInput)
         {
             rb.velocity = Vector2.up * jumpStrength + Vector2.right * rb.velocity.x;
-            canJump = false;
             onJump.Invoke();
             animator.SetBool("IsGrounded", false);
-            Debug.Log("jump");
         }
 
         if (jumpInput)
