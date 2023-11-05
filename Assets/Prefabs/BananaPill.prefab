@@ -290,7 +290,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095174998996660073}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.29450253, w: 0.95565075}
+  m_LocalRotation: {x: 0, y: 0, z: -0.29450217, w: 0.95565087}
   m_LocalPosition: {x: 0.47633314, y: -0.0048184395, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -746,7 +746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4335876459987371529}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.019606592, w: 0.9998078}
+  m_LocalRotation: {x: 0, y: 0, z: -0.019606667, w: 0.9998078}
   m_LocalPosition: {x: 0.40544942, y: 0.000000036262648, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -884,7 +884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5024055712101076090}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.71762955, w: 0.696425}
+  m_LocalRotation: {x: 0, y: 0, z: -0.71762955, w: 0.6964251}
   m_LocalPosition: {x: 0.20055744, y: -0.47739822, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1413,7 +1413,7 @@ GameObject:
   - component: {fileID: 972750389082160199}
   m_Layer: 8
   m_Name: BananaPill
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1783,7 +1783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8987094785810364283}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.6957068, w: 0.718326}
+  m_LocalRotation: {x: 0, y: 0, z: -0.69570684, w: 0.71832585}
   m_LocalPosition: {x: -0.10088855, y: -0.39348483, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
