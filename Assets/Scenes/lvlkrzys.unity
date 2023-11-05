@@ -1567,6 +1567,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2679312026021318768, guid: d059fe95b310c2940bf946cef8496097, type: 3}
+      propertyPath: hitOnlyZombie
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4874984908550764552, guid: d059fe95b310c2940bf946cef8496097, type: 3}
       propertyPath: m_Name
       value: hot
