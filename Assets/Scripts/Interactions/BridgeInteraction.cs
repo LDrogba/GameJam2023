@@ -130,6 +130,7 @@ public class BridgeInteraction : MonoBehaviour, IInteractable
     {
         if (timeCount * speed > 1.0f)
         {
+            Debug.Log("bridge on");
             timeCount = 0.0f;
             isActive = true;
             leftArmBone_startPos.transform.position = leftArmBone.transform.position;
@@ -154,6 +155,7 @@ public class BridgeInteraction : MonoBehaviour, IInteractable
     {
         if (timeCount * speed > 1.0f)
         {
+            Debug.Log("bridge off");
             timeCount = 0.0f;
             isActive = false;
         }
