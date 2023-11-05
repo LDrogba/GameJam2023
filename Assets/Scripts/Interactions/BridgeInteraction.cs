@@ -11,6 +11,9 @@ public class BridgeInteraction : MonoBehaviour, IInteractable
     public GameObject leftArmDest;
     public GameObject rightArmDest;
     public GameObject rootBoneDest;
+    public GameObject leftForarmDest;
+    public GameObject rightForarmDest;
+    public GameObject collider;
 
     public UnityEvent onActivate;
     public UnityEvent onDisactivate;
@@ -24,9 +27,14 @@ public class BridgeInteraction : MonoBehaviour, IInteractable
     private GameObject leftArmBone;
     private GameObject rightArmBone;
     private GameObject rootBone;
+    private GameObject leftForearmBone;
+    private GameObject rightForearmBone;
     private GameObject leftArmBone_startPos;
     private GameObject rightArmBone_startPos;
     private GameObject rootBone_startPos;
+    private GameObject leftForearmBone_startPos;
+    private GameObject rightForearmBone_startPos;
+    private GameObject player;
 
     private float timeCount = 2.0f;
     void Start()
@@ -34,6 +42,9 @@ public class BridgeInteraction : MonoBehaviour, IInteractable
         leftArmBone_startPos = new GameObject();
         rightArmBone_startPos = new GameObject();
         rootBone_startPos = new GameObject();
+        leftForearmBone_startPos = new GameObject();
+        rightForearmBone_startPos = new GameObject();
+    player = GameObject.FindGameObjectWithTag("Player");
     }
 
 
@@ -51,6 +62,9 @@ public class BridgeInteraction : MonoBehaviour, IInteractable
 
             rightArmBone.transform.rotation = Quaternion.Lerp(rightArmBone_startPos.transform.rotation, rightArmDest.transform.rotation, timeCount * speed);
             rightArmBone.transform.position = Vector3.Lerp(rightArmBone_startPos.transform.position, rightArmDest.transform.position, timeCount * speed);
+
+            rightForearmBone.transform.rotation = Quaternion.Lerp(rightForearmBone_startPos.transform.rotation, rightForarmDest.transform.rotation, timeCount * speed);
+            leftForearmBone.transform.rotation = Quaternion.Lerp(leftForearmBone_startPos.transform.rotation, leftForarmDest.transform.rotation, timeCount * speed);
         }
         else if(!isActive && timeCount * speed < 1.0f)
         {
@@ -65,8 +79,15 @@ public class BridgeInteraction : MonoBehaviour, IInteractable
             rightArmBone.transform.rotation = Quaternion.Lerp(rightArmDest.transform.rotation, rightArmBone_startPos.transform.rotation, timeCount * speed);
             rightArmBone.transform.position = Vector3.Lerp(rightArmDest.transform.position, rightArmBone_startPos.transform.position, timeCount * speed);
 
-            if(timeCount * speed >= 1.0f)
+            rightForearmBone.transform.rotation = Quaternion.Lerp(rightForarmDest.transform.rotation, rightForearmBone_startPos.transform.rotation, timeCount * speed);
+            leftForearmBone.transform.rotation = Quaternion.Lerp(leftForarmDest.transform.rotation, leftForearmBone_startPos.transform.rotation, timeCount * speed);
+
+            if (timeCount * speed >= 1.0f)
             {
+                player.GetComponent<Rigidbody2D>().simulated = true;
+                player.GetComponent<Movement>().enabled = true;
+                player.GetComponentInChildren<Animator>().enabled = true;
+                collider.SetActive(false);
                 onDisactivate.Invoke();
             }
         }
@@ -83,6 +104,17 @@ public class BridgeInteraction : MonoBehaviour, IInteractable
             }
             rightArmBone = GameObject.Find("rightPlayerArmBone");
             rootBone = GameObject.Find("rootPlayerBone");
+            leftForearmBone = GameObject.Find("banana_0/bone_1/bone_3");
+            rightForearmBone = GameObject.Find("rootPlayerBone/bone_4");
+            if (leftForearmBone != null)
+            {
+                Debug.Log("leftForearmBone");
+            }
+            if (rightForearmBone != null)
+            {
+                Debug.Log("ZNALAZLEM rightForearmBone");
+            }
+
         }
         if (!isActive)
         {
@@ -106,6 +138,14 @@ public class BridgeInteraction : MonoBehaviour, IInteractable
             rightArmBone_startPos.transform.rotation = rightArmBone.transform.rotation;
             rootBone_startPos.transform.position = rootBone.transform.position;
             rootBone_startPos.transform.rotation = rootBone.transform.rotation;
+            leftForearmBone_startPos.transform.rotation = leftForearmBone.transform.rotation;
+            rightForearmBone_startPos.transform.rotation = rightForearmBone.transform.rotation;
+
+            player.GetComponent<Rigidbody2D>().simulated = false;
+            player.GetComponent<Movement>().enabled = false;
+            player.GetComponentInChildren<Animator>().enabled = false;
+            collider.SetActive(true);
+
             onActivate.Invoke();
         }
 
