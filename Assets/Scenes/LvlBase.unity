@@ -5224,6 +5224,10 @@ PrefabInstance:
       propertyPath: sceneName
       value: lvlBase
       objectReference: {fileID: 0}
+    - target: {fileID: 2303692510118265804, guid: eac42bd3f2e427d418adfb92461e9fc2, type: 3}
+      propertyPath: nextSceneName
+      value: sky1
+      objectReference: {fileID: 0}
     - target: {fileID: 2575919964440391749, guid: eac42bd3f2e427d418adfb92461e9fc2, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7185574

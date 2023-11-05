@@ -5,7 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/parkourNoZombie.unity
+    guid: 8344aab90bf416943814b642eb6d3f41
+  - enabled: 1
+    path: Assets/Scenes/bridge1.unity
+    guid: 2d7473ae159faf44b87b2ec0fdf42cb2
+  - enabled: 1
+    path: Assets/Scenes/arena.unity
+    guid: 2c2aaa4b739b2b64ba12e3590683cd8d
+  - enabled: 1
+    path: Assets/Scenes/lvlkrzys.unity
+    guid: 6f54caefb940e104db8c4006e94be4d6
+  - enabled: 1
+    path: Assets/Scenes/LvlBase.unity
+    guid: b8927b11fb67e414e981af341c347d20
+  - enabled: 1
+    path: Assets/Scenes/sky1.unity
+    guid: 7a2c66ad4c361054891d3c8bff31d4af
   m_configObjects: {}

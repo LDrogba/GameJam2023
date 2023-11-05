@@ -1994,7 +1994,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2303692510118265804, guid: eac42bd3f2e427d418adfb92461e9fc2, type: 3}
       propertyPath: nextSceneName
-      value: lvlkrzys
+      value: LvlBase
       objectReference: {fileID: 0}
     - target: {fileID: 2618588044268456567, guid: eac42bd3f2e427d418adfb92461e9fc2, type: 3}
       propertyPath: m_LocalPosition.x
