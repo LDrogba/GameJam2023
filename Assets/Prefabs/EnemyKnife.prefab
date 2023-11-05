@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 1826760944939821498}
   - component: {fileID: 7507767666915223477}
   - component: {fileID: 8394153110961349404}
+  - component: {fileID: 2544314699707933028}
   m_Layer: 7
   m_Name: knife
   m_TagString: Untagged
@@ -534,6 +535,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f71f7a576e566447baaee563d7636ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2544314699707933028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873489346514202224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b261308d24e53f04389ae6ee5f10559e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitScanPosition: {x: 0, y: 0}
+  hitScanSize: {x: 0.06, y: 0.69}
+  layerToHit:
+    serializedVersion: 2
+    m_Bits: 256
+  hitOnlyZombie: 0
 --- !u!1 &7198529870496245930
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class DamageOnTouch : MonoBehaviour
     public Vector2 hitScanPosition;
     public Vector2 hitScanSize;
     public LayerMask layerToHit;
+    public bool hitOnlyZombie;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,10 @@ public class DamageOnTouch : MonoBehaviour
             var dmg = temp.GetComponent<Damagable>();
             if (dmg)
             {
+                if (hitOnlyZombie && dmg.gameObject.name != "BananaZombie")
+                {
+                    continue;
+                }
                 dmg.Damage();
             }
         }
