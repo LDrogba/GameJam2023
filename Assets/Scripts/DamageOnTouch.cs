@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DamageOnTouch : MonoBehaviour
 {
+    public Vector2 hitScanPosition;
+    public Vector2 hitScanSize;
+    public LayerMask layerToHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +19,23 @@ public class DamageOnTouch : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void FixedUpdate()
     {
-        var dmg = collision.gameObject.GetComponent<Damagable>();
-        if (dmg != null)
+        var temps = Physics2D.OverlapBoxAll((Vector3)hitScanPosition + transform.position, hitScanSize, 0, layerToHit);
+        foreach (var temp in temps)
         {
-            dmg.Damage();
+            Debug.Log(temp.gameObject.name);
+            var dmg = temp.GetComponent<Damagable>();
+            if (dmg)
+            {
+                dmg.Damage();
+            }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube((Vector3)hitScanPosition + transform.position, hitScanSize);
     }
 }

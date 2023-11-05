@@ -630,7 +630,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  hitPoints: 0
+  hitPoints: 1
 --- !u!1 &1944970023246856926
 GameObject:
   m_ObjectHideFlags: 0
