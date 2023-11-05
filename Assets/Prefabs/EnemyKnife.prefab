@@ -287,9 +287,9 @@ MonoBehaviour:
   player: {fileID: 0}
   jumpPoints:
   - {fileID: 2487348443716255326}
-  attackDist: 0.54
+  attackDist: 1
   jumpDist: 0.81
-  guardingHeight: 0.5
+  guardingHeight: 1
 --- !u!114 &8690205751284322913
 MonoBehaviour:
   m_ObjectHideFlags: 0

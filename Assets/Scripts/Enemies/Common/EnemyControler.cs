@@ -24,7 +24,7 @@ public class EnemyControler : MonoBehaviour, IMoveController, IAttackController
     void Update()
     {
         if ((player.transform.position.x < startPoint.transform.position.x ||
-            player.transform.position.x > endPoint.transform.position.x) && 
+            player.transform.position.x > endPoint.transform.position.x) || 
             math.abs(player.transform.position.y - transform.position.y) > guardingHeight) //player is not in guarding zone
         {
             if (transform.position.x <= startPoint.transform.position.x)
