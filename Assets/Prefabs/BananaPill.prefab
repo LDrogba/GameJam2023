@@ -1462,7 +1462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onAirCheckPoint: {fileID: 4924376478464563803}
-  onAirCheckRadius: 0.01
+  onAirCheckRadius: 0.04
   movementSpeed: 5
   jumpStrength: 16.4
   onLanding:
