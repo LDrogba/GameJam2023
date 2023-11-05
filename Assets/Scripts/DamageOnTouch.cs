@@ -15,4 +15,13 @@ public class DamageOnTouch : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        var dmg = collision.gameObject.GetComponent<Damagable>();
+        if (dmg != null)
+        {
+            dmg.Damage();
+        }
+    }
 }
