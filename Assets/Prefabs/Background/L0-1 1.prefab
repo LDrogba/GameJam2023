@@ -157,7 +157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3322751502034593134
 Transform:
   m_ObjectHideFlags: 0
@@ -394,7 +394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4257960170083494581
 Transform:
   m_ObjectHideFlags: 0
@@ -478,7 +478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8101003074629935028
 Transform:
   m_ObjectHideFlags: 0
@@ -557,6 +557,10 @@ PrefabInstance:
     - target: {fileID: 7434528674313475249, guid: 85e04565a9315e94483eb969b0e5b454, type: 3}
       propertyPath: m_Name
       value: bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7434528674313475249, guid: 85e04565a9315e94483eb969b0e5b454, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8775918116641465405, guid: 85e04565a9315e94483eb969b0e5b454, type: 3}
       propertyPath: m_LocalPosition.x
@@ -672,6 +676,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: hooker (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7362530483978733444, guid: f4513bd88a7279a4eb4367df84b57d4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -733,6 +741,10 @@ PrefabInstance:
     - target: {fileID: 3413656064510260753, guid: 71f2647d758ac5f40bcc47d0e8018d8f, type: 3}
       propertyPath: m_Name
       value: lawn_chair
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413656064510260753, guid: 71f2647d758ac5f40bcc47d0e8018d8f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -799,6 +811,10 @@ PrefabInstance:
     - target: {fileID: 7362530483978733444, guid: f4513bd88a7279a4eb4367df84b57d4f, type: 3}
       propertyPath: m_Name
       value: hooker
+      objectReference: {fileID: 0}
+    - target: {fileID: 7362530483978733444, guid: f4513bd88a7279a4eb4367df84b57d4f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7054804462116111666, guid: f4513bd88a7279a4eb4367df84b57d4f, type: 3}
