@@ -39,6 +39,7 @@ public class Attack : MonoBehaviour
     {
         attacking = true;
         onWindup.Invoke();
+        animator.SetTrigger("Windup");
         yield return new WaitForSeconds(windup);
         onAttack.Invoke();
         animator.SetTrigger("Attack");

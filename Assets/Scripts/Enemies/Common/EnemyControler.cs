@@ -53,7 +53,11 @@ public class EnemyControler : MonoBehaviour, IMoveController, IAttackController
                 if (transform.position.x > player.transform.position.x)
                     goingRight = false;
             }
-            if (Vector3.Distance(player.transform.position, transform.position) <= attackDist)
+
+            Vector3 relativePos = player.transform.position - transform.position;
+            bool isAtTheRight = Vector3.Dot(transform.right, relativePos) > 0.0f;
+
+            if ((Vector3.Distance(player.transform.position, transform.position) <= attackDist) && isAtTheRight)
             {
                 Debug.Log(transform.name + "se atakuje");
                 attackInput = true;
