@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 5822511887718594432}
   - component: {fileID: 2764878510932333899}
   - component: {fileID: 4389057357728283384}
+  - component: {fileID: 970266961677139044}
   m_Layer: 9
   m_Name: Bridgekrzys
   m_TagString: Untagged
@@ -198,7 +199,19 @@ MonoBehaviour:
   collider: {fileID: 2780195408235392403}
   onActivate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 970266961677139044}
+        m_TargetAssemblyTypeName: Utility, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4628779782719038584, guid: 1ca330aa44c584f4995e8052c98a06b4, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDisactivate:
     m_PersistentCalls:
       m_Calls: []
@@ -239,6 +252,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.72}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &970266961677139044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5015256253333996475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f71f7a576e566447baaee563d7636ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5186346698546415122
 GameObject:
   m_ObjectHideFlags: 0
